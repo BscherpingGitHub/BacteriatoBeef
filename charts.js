@@ -60,7 +60,7 @@ function buildCharts(sample) {
     // 3. Create a variable that holds the samples array. 
   var sampleArr = data.samples;
     // 4. Create a variable that filters the samples for the object with the desired sample number.
-  var filterSamp = data.filter(data => data.id == sample);
+  var filterSamp = sampleArr.filter(data => data.id == sample);
     //  5. Create a variable that holds the first sample in the array.
   var firSample = filterSamp[0];
 
@@ -68,6 +68,10 @@ function buildCharts(sample) {
   var oIds = firSample.otu_ids;
   var oLabels = firSample.otu_labels;
   var sValues = firSample.sample_values;
+
+  console.log(oIds);
+  console.log(oLabels);
+  console.log(sValues);
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
@@ -78,7 +82,7 @@ function buildCharts(sample) {
     // 8. Create the trace for the bar chart. 
     var barData = [{
       x: sValues.slice(0, 10).reverse(),
-      text: oLabels.slice(0, 10).reverse(),
+      text: oLabels.slice(0, 0).reverse(),
       type: "bar"
     }];
     // 9. Create the layout for the bar chart. 
