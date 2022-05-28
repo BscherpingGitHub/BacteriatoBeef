@@ -109,7 +109,7 @@ function buildCharts(sample) {
       marker: {
         color: oIds,
         size: sValues,
-        colorscale: "Earth"
+        colorscale: "Electric"
       }
     }];
     console.log(bubbleData);
@@ -136,7 +136,7 @@ function buildCharts(sample) {
 
     // 4. Create the trace for the gauge chart.
     var gaugeData = [{
-      title: "Belly Button Washing Freqency",
+      title: { text: "<b>Belly Button Washing Freqency</b><br>Scrubs per week"},
       type: "indicator",
       value: washFreq,
       mode: "gauge+number",
