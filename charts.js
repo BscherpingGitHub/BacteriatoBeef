@@ -141,7 +141,12 @@ function buildCharts(sample) {
       value: washFreq,
       mode: "gauge+number",
       gauge: {
-        axis: { range: [null, 10] },
+        axis: { range: [null, 10],
+                tickmode: "array",
+                tickvals: [0, 2, 4, 6, 8, 10],
+                ticktext: [0, 2, 4, 6, 8, 10]
+              },
+        bar: {color: "black"},
         steps: [
           { range: [0, 2], color: "red"},
           { range: [2, 4], color: "orange"},
@@ -154,13 +159,6 @@ function buildCharts(sample) {
     
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { 
-      gauge: {
-        axis: {
-          tickmode: "array",
-          tickvals: [0, 2, 4, 6, 8, 10],
-          ticktext: [0, 2, 4, 6, 8, 10]
-        }
-      }
      
     };
 
